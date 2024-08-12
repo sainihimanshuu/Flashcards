@@ -13,7 +13,7 @@ import { CardsContextProvider } from "./context/CardsContext.jsx";
 
 import { HomePage, EditPage, CreatePage } from "./pages/index.js";
 
-axios.defaults.baseURL = "http://localhost:8000/api/v1";
+axios.defaults.baseURL = "https://flashcards-backend-o5ug.onrender.com/api/v1";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
