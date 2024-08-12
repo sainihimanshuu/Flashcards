@@ -32,7 +32,6 @@ export default function Edit({ cardId }) {
                 axios
                     .get("/card/getAll")
                     .then((res) => {
-                        console.log("useEffect", res.data);
                         setCards(res.data.cards);
                         setCurrentIndex(currentIndex);
                     })
