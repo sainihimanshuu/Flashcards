@@ -7,7 +7,7 @@ import { useCardsContext } from "../context/CardsContext.jsx";
 export default function Edit({ cardId }) {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
-    const { setCards } = useCardsContext();
+    const { setCards, currentIndex, setCurrentIndex } = useCardsContext();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -34,6 +34,7 @@ export default function Edit({ cardId }) {
                     .then((res) => {
                         console.log("useEffect", res.data);
                         setCards(res.data.cards);
+                        setCurrentIndex(currentIndex);
                     })
                     .catch((err) =>
                         console.log("error while getting all cards", err)

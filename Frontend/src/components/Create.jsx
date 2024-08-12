@@ -2,11 +2,12 @@ import { useState } from "react";
 import Input from "./Input.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//import { useCardsContext } from "../context/CardsContext.jsx";
+import { useCardsContext } from "../context/CardsContext.jsx";
 
 export default function Create() {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
+    const { cards, setCurrentIndex } = useCardsContext();
     const navigate = useNavigate();
 
     const handleCreate = () => {
@@ -16,6 +17,7 @@ export default function Create() {
                 answer,
             })
             .then((res) => {
+                setCurrentIndex(cards.length);
                 setQuestion("");
                 setAnswer("");
                 navigate("/");

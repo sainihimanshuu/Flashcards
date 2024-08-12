@@ -5,10 +5,11 @@ import { useCardsContext } from "../context/CardsContext.jsx";
 import Button from "./Button.jsx";
 
 export default function Home() {
-    const { cards, setCards } = useCardsContext();
+    const { cards, setCards, currentIndex, setCurrentIndex } =
+        useCardsContext();
     const [loading, setLoading] = useState(true);
     const [isAnswer, setIsAnswer] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    //const [currentIndex, setCurrentIndex] = useState(0);
     const navigate = useNavigate();
 
     useEffect(() => {

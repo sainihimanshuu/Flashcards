@@ -8,9 +8,12 @@ export const useCardsContext = () => {
 
 export const CardsContextProvider = ({ children }) => {
     const [cards, setCards] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     return (
-        <CardsContext.Provider value={{ cards, setCards }}>
+        <CardsContext.Provider
+            value={{ cards, setCards, currentIndex, setCurrentIndex }}
+        >
             {children}
         </CardsContext.Provider>
     );
